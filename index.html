@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <article>
+        <div class="border_line">
+            <div class="image">
+                <img src="./Screenshot 2023-02-08 165407.png" alt=""><br>
+                <button onclick="display()">Buy know</button>
+            </div>
+        </div>
+    </article>
+    <div class="main" id="main">
+        <header>
+            <div class="main_header">
+                <h3>Enter your card detalis</h3>
+                <i class="fa-solid fa-x" id="cancle" onclick="cancle()"></i>
+            </div>
+         <div class="disply">   
+            <div class="main_detalis"> 
+                <form action="#" >
+                    <label for="">Card number:</label>
+                    <input type="text" id="card_number1">
+                    <input type="text" id="card_number2">
+                    <input type="text" id="card_number3">
+                    <input type="text" id="card_number4">
+                    <br>
+                    <label for="">Name of the card:</label>
+                    <input type="text" id="card_name">
+                </form><br>
+                <span>Expire Date</span>
+                <select name="" id="card_month">
+                    <option value="#">01</option>
+                    <option value="#">02</option>
+                    <option value="#">03</option>
+                    <option value="#">04</option>
+                    <option value="#">05</option>
+                    <option value="#">06</option>
+                    <option value="#">07</option>
+                    <option value="#">08</option>
+                    <option value="#">09</option>
+                    <option value="#">10</option>
+                    <option value="#">11</option>
+                    <option value="#">12</option>
+                </select>
+                <select name="" id="card_year">
+                    <option value="#">2023</option>
+                    <option value="#">2024</option>
+                    <option value="#">2025</option>
+                    <option value="#">2026</option>
+                    <option value="#">2027</option>
+                    <option value="#">2028</option> 
+                    <option value="#">2029</option>
+                    <option value="#">2030</option>
+                    <option value="#">2031</option>
+                    <option value="#">2032</option>
+                    <option value="#">2033</option>
+                    <option value="#">2034</option>
+                </select>
+            </div>
+            <hr>
+            <div class="card_types">
+                <p>Amazon accepty all major credit and debit card</p>
+                <img src="./Screenshot 2023-02-07 170018.png" alt="cards" style="width: 200px; height: 200px;">
+            </div>    
+        </div>
+        <div class="fotter">
+            <button onclick="cancle()">Cancle</button>
+            <button onclick="valid()">Submit</button>
+        </div>
+        </header>
+    </div>
+
+    <script>
+        function display(){
+            let x=document.getElementById("main");
+            x.style.display="block"
+        }
+        function cancle(){
+            let x=document.getElementById("main");
+            x.style.display="none"
+        
+        }
+
+        
+         function valid(){
+            let card1=document.getElementById("card_number1").value;
+            let card2=document.getElementById("card_number2").value;
+            let card3=document.getElementById("card_number3").value;
+            let card4=document.getElementById("card_number4").value;
+            let reg=/^[5-9][0-9]{15}/
+            let x=(`${card1}${card2}${card3}${card4}`)
+            if(reg.test(x)){
+                alert("vaild credit card details")
+            }else{
+                alert("cheack the card details")
+            }
+            let credit=document.getElementById("card_name").value;
+            let reg1=/[credit debit]$/
+            if(reg1.test(credit)){
+                alert("succesfilly add card name")
+            }else{
+                alert("enter correct card name")
+            }
+        }
+    </script>
+</body>
+</html>
